@@ -1,0 +1,36 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: ft_strcat default clang",
+			"command": "/usr/bin/clang",
+			"args": [
+				"-g",
+				"-Wall",
+				"-Wextra",
+				"-Werror",
+				"-Wconversion",
+				"-Ilibft/includes",
+				//"-I${workspaceFolder}/libft/includes",
+				//"-L${workspaceFolder}/libft",
+				"-lft",
+				//"${workspaceFolder}/*.c",
+				"${workspaceFolder}/libft/ft_strcat.c",
+				"${workspaceFolder}/libft/ft_strlen.c",
+				"${workspaceFolder}/libft/ft_strcpy.c",
+				"${workspaceFolder}/mains/main.c",
+				"-o",
+				"${workspaceFolder}/binaries/ft_strcat_debug_binary"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: /usr/bin/clang"
+		}
+	]
+}
