@@ -2,6 +2,15 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"type": "shell",
+			"label": "make libft",
+			"command": "${workspaceFolder}/scripts/make.sh",
+			"options": {
+				"shell": {"executable": "/bin/bash"},
+				"cwd": "${workspaceFolder}/scripts"
+			}
+		},
+		{
 			"type": "cppbuild",
 			"label": "C/C++: ft_strcat default clang",
 			"command": "/usr/bin/clang",
@@ -30,7 +39,8 @@
 				"$gcc"
 			],
 			"group": "build",
-			"detail": "compiler: /usr/bin/clang"
+			"detail": "compiler: /usr/bin/clang",
+			"dependsOn": "make libft"
 		}
 	]
 }
