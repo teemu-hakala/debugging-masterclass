@@ -13,7 +13,7 @@
 				"-Wconversion",
 				"-Ilibft/includes",
 				//"-I${workspaceFolder}/libft/includes",
-				//"-L${workspaceFolder}/libft",
+				"-L${workspaceFolder}/libft",
 				"-lft",
 				//"${workspaceFolder}/*.c",
 				"${workspaceFolder}/libft/ft_strcat.c",
