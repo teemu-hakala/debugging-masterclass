@@ -1,14 +1,6 @@
-<div>
-	<span style="color:#4287f5;font-family:Futura; font-size:2.47em;font-weight:720;text-shadow: -2px -2px #cf9115;">D</span>
-	<div style="margin-left: -6.3px;display:inline;"></div>
-	<span style="color:#4287f5;font-family:Futura; font-size:1.42em;font-weight:720;letter-spacing:-0.247px;text-shadow: -1.42px -1.42px #f5ad42;text-decoration-line:overline;text-decoration-style:double;">EBUGGING</span>
-	<span style="color:#4287f5;font-family:Futura; font-size:2.47em;font-weight:720;text-shadow: -2px -2px #f5ad42;">M</span>
-	<div style="margin-left: -4.2px;display:inline;"></div>
-	<span style="color:#4287f5;font-family:Futura; font-size:1.42em;font-weight:720;letter-spacing:-0.247px;text-shadow: -1.42px -1.42px #f5ad42;text-decoration-line:overline;text-decoration-style:double;">ASTERCLASS</span>
-	<span style="color:#4287f5;font-family:Futura; font-size:2.47em;font-weight:720;text-shadow: -1.42px -1.42px #f5ad42;"><sup>∞</sup></span>
-</div>
 
 
+![Debugging Masterclass](title.png)
 ### The following guide shows a way to use the user interface for the LLDB debugger of Visual Studio Code.
   ---
 
