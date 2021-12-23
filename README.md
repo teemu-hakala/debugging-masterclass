@@ -16,6 +16,8 @@ Let's go ahead and open from the application menu bar at the top `File->New Wind
 
  - In  the Explorer view project directory should appear as the root of the Workspace. This is crucial so that later in the .json files we can call this as ${workspaceFolder}.  
  
+ [**Quick video of creating the following template configuration files**](https://vimeo.com/659664828)
+
  - Open the .c file you wish to debug.  
 
  - Choose from the top-bar application menu `Terminal -> Run Build Task (⇧⌘B)`.
@@ -50,7 +52,7 @@ From the file we can notice the `label` for the task; `command` to run, which is
 		"${workspaceFolder}/binaries/ft_strcat_debug_binary"
 	],
 
-I like to use ${workspaceFolder} variable which represents the root directory in the workspace. This is why we at first opened the directory. 
+I like to use the ${workspaceFolder} variable which represents the root directory in the workspace. This is why we at first opened the directory. 
 
  - Specify all the names of the files to be added to the compilation as usual. Prepend them with the absolute path of ${workspaceFolder}.  
 
@@ -95,7 +97,7 @@ preLaunchTask is the Label we chose in `tasks.json`.
 
  > Tip: The debugger has been coded to be strict about the type of the currently active file that has to be open once you begin debugging. For our use case .c extension works fine.  
 
- - Set a breakpoint on the first effective line of your function. In our **ft_strcat** select line 17.  
+ - Set a breakpoint on the first effective line of your function. In our **ft_strcat** select line **17**.  
 
  > Tip: Set the breakpoint by left clicking on the left hand-side of line numbers. A red circle should appear and stay.  
 
