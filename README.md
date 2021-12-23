@@ -1,7 +1,7 @@
 
 
 ![Debugging Masterclass](title.png)
-### The following guide shows a way to use the user interface for the LLDB debugger of Visual Studio Code.
+### The following is a guide to using the native Visual Studio Code interface for the LLDB low-level debugger.
   ---
 
 **Prerequisite:** [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) from Microsoft	
@@ -12,9 +12,9 @@
 Let's go ahead and open from the application menu bar at the top `File->New Window (⇧⌘N)` to work with.  
 
  - Select the newly opened window and do `File->Open... (⌘O)` and navigate to the directory which holds the files you wish to debug.  
- >Tip: Use ⌘↑ to navigate to the parent directory. 
+ >Tip: Use ⌘↑ to navigate to the parent directory while selecting the directory in the Finder pop up. 
 
- - In  the Explorer view project directory should appear as the root of the Workspace. This is important so that later in the .json files we can call this as ${workspaceFolder}.  
+ - In  the Explorer view your project directory should appear as the root of the Workspace. This is important so that later in the .json files we can call this as ${workspaceFolder}.  
  
  [**Quick video of creating the following template configuration files**](https://vimeo.com/659664828)
 
@@ -24,8 +24,8 @@ Let's go ahead and open from the application menu bar at the top `File->New Wind
 
  - From the popped up list of detected tasks select the cogwheel (`Configure task`) from the right hand side of the task named `(C/C++: clang build active file, compiler: /usr/bin/clang)`.  
 
- - Inside .vscode directory (should be inside root of our repo)`tasks.json` file should appear with a preconfigured setup.
- **This is one of the two crucial files in debugging with Visual Studio Code. Another one being launch.json**  
+ - Inside .vscode directory (should be inside the root of our repo) `tasks.json` file should appear with a preconfigured setup.
+ **This is one of the two crucial files in debugging with Visual Studio Code. Another one being `launch.json`**  
 
 	> Tip: Hover your mouse over the variables for clarifying mouseover texts. 
  
@@ -36,7 +36,6 @@ From the file we can notice the `label` for the task; `command` to run, specifyi
 > Tip: Use Control+Spacebar for IntelliSense to see all contextually proper variable names. Navigate your cursor with arrow keys to change context and select an item from the list.  
 >
 > ![<Image of IntelliSense contextual menu>](https://i.imgur.com/nnkQwXo.png)
-
 
 	"args": [
 		"-g",
@@ -57,7 +56,7 @@ From the file we can notice the `label` for the task; `command` to run, specifyi
 
 I like to use the ${workspaceFolder} variable which represents the root directory in the workspace. This is why we at first opened the directory. 
 
- - Specify all the names of the files to be added to the compilation as usual. Prepend them with the absolute path of ${workspaceFolder}.  
+ - Specify all the paths to the files to be added to the compilation as usual. Prepend them with the absolute path of ${workspaceFolder}. Currently our files to be debugged reside in ${workspaceFolder}/libft/  
 
  - Add library inclusions and header search directories as usual.  
 
