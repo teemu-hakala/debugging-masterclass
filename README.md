@@ -14,13 +14,13 @@ Let's go ahead and open from the application menu bar at the top `File->New Wind
  - Select the newly opened window and do `File->Open... (⌘O)` and navigate to the directory which holds the files you wish to debug. 
  >Tip: Use ⌘↑ to navigate to the parent directory. 
 
- - In  the Explorer view project directory should appear as the root of the Workspace. This is crucial so that later in the .json files we can call this as \${workspaceFolder}.  
+ - In  the Explorer view project directory should appear as the root of the Workspace. This is crucial so that later in the .json files we can call this as ${workspaceFolder}.  
  
  - Open the .c file you wish to debug.  
 
  - Choose from the top-bar application menu `Terminal -> Run Build Task (⇧⌘B)`.
 
- - From the list of detected tasks select the cogwheel from the right hand side of the first task `(C/C++: clang build active file, compiler: /usr/bin/clang)`.  
+ - From the list of detected tasks select the cogwheel (`Configure task`) from the right hand side of the first task `(C/C++: clang build active file, compiler: /usr/bin/clang)`.  
 
  - Inside .vscode directory `tasks.json` file should appear with a preconfigured setup.
  **This is one of the two crucial files in debugging with Visual Studio Code. Another one being launch.json**  
@@ -33,16 +33,16 @@ From the file we can notice the `label` for the task; `command` to run, which is
 
 > Tip: Use Control+Spacebar for IntelliSense to see all contextually proper variable names. Navigate your cursor with arrow keys to change context and select an item from the list.  
 
-I like to use \${workspaceFolder} variable which represents the root directory in the workspace. This is why we at first opened the directory. 
+I like to use ${workspaceFolder} variable which represents the root directory in the workspace. This is why we at first opened the directory. 
 
- - Specify all the names of the files to be added to the compilation as usual. Prepend them with the absolute path of \${workspaceFolder}.  
+ - Specify all the names of the files to be added to the compilation as usual. Prepend them with the absolute path of ${workspaceFolder}.  
 
  - Add library inclusions and header search directories as usual.  
 
  - Give a descriptive and distinguishable name to the output file after "-o", since this is used later on in `launch.json`. 
  >**Warning: The compilation may overwrite any file that has the same name as specified in the output flag.**
  
- - Within options tag, update current working directory to your liking, usually to \${workspaceFolder}.
+ - Within options tag, update current working directory to your liking, usually to ${workspaceFolder}.
 
 	- Change label as you see fit. Usually it's best to have descriptive words at the start of your label.
 
@@ -68,13 +68,17 @@ Let's now navigate to Explorer view and select the .vscode directory and from th
  - Change the program to match the output file name.  
 preLaunchTask is the Label we chose in `tasks.json`.
 
- - Change the current working directory, cwd, to be \${workspaceFolder} or to any path that you wish anny files the program creates to go into.  
+ - Change the current working directory, cwd, to be ${workspaceFolder} or to any path that you wish any files the program creates to go into.  
  
  - If your main requires arguments, set them in double quotes in the comma-separated list of args.  
 
  - Activate the .c source file.  
 
- - Set a breakpoint on the first effective line of your function. In our **ft_strcpy** select line 17.  
+>Tip: Double click on a file (name or tab) to make it persist.  
+
+>Tip: The debugger has been coded to be strict about the type of the currently active file that has to be open once you begin debugging. For our use case .c extension works fine.  
+
+ - Set a breakpoint on the first effective line of your function. In our **ft_strcat** select line 17.  
 
  > Tip: Set the breakpoint by left clicking on the left hand-side of line numbers. A red circle should appear and stay.  
 
@@ -83,6 +87,8 @@ preLaunchTask is the Label we chose in `tasks.json`.
  - Start the debugger from the green play button.  
  
  > Tip: You might want to drag the debug console next to the terminal pane to view them both at the same time.  
+
+ > Tip: Once executing `Run and Debug`, even if Build finished with errors, the selected launch.json rule is ran. This creates oddities with the debugger interface given that a previous working version of the program exists.  
 
  Now your program should have been built successfully and the debugger should halt the program on the line **17** we specified.  
 
@@ -107,14 +113,17 @@ preLaunchTask is the Label we chose in `tasks.json`.
  > Tip: Observe from the left-hand side the interactive Call Stack, which shows every function call's stack frame in order. (Useful for inspecting recursion of putnbr.)  
 
 
+ > Tip: Variables on call stack change throughout, they aren't saved as snapshots of stack frames.  
+
+
  > Tip: It isn't possible to retrace your steps so `Restart (⇧⌘F5)` the debugging whenever necessary, and after every change made to the sources.  
 
  ---
  Once the functionality has been verified, `Step out (F12)` from the function.  
 
- Now we are back at the line **17** the program first halted to. `Step into (F11)` once again now to the enclosing function call **ft_strcpy**.  
+ Now we are back at the line **17** the program first halted to. `Step into (F11)` once again now into the enclosing function call **ft_strcpy**.  
 
- - Set a breakpoint after the while loop, and press `Continue (F5)` to skip it.  
+ - Set a breakpoint after the while loop on line **20** of ft_strcpy, and press `Continue (F5)` to skip to it.  
 
  - Check the results in Variables pane.  
 
@@ -126,7 +135,7 @@ preLaunchTask is the Label we chose in `tasks.json`.
 
  We can for example use our function to count the length of the string s2.  
 
- - Simply create and new watch expression with the value `ft_strlen(s2)`.  
+ - Simply create a new watch expression with the value `ft_strlen(s2)`.  
 
  > Tip: Beware of using watch expressions or calling functions that modify the memory of the program once running. (Watch expressions are evaluated everytime the program halts.)  
 
@@ -158,3 +167,5 @@ preLaunchTask is the Label we chose in `tasks.json`.
 >Tip: When you need to give input from the stdin to the program you are debugging, use `externalConsole: true` to achieve this.  
 >
 >Tip: Any file you wish to debug must be added as a source to the compilation phase. Use the wildcard *.c to select all .c files of a directory.  
+>
+>Tip: Attaching a shell script as a dependency to tasks will help you debug projects which have prerequisite libraries to them.  
