@@ -33,6 +33,23 @@ From the file we can notice the `label` for the task; `command` to run, which is
 
 > Tip: Use Control+Spacebar for IntelliSense to see all contextually proper variable names. Navigate your cursor with arrow keys to change context and select an item from the list.  
 
+	"args": [
+		"-g",
+		"-Wall",
+		"-Wextra",
+		"-Werror",
+		"-Wconversion",
+		"-I${workspaceFolder}/libft/includes",
+		"-L${workspaceFolder}/libft",
+		"-lft",
+		"${workspaceFolder}/libft/ft_strcat.c",
+		"${workspaceFolder}/libft/ft_strlen.c",
+		"${workspaceFolder}/libft/ft_strcpy.c",
+		"${workspaceFolder}/mains/main.c",
+		"-o",
+		"${workspaceFolder}/binaries/ft_strcat_debug_binary"
+	],
+
 I like to use ${workspaceFolder} variable which represents the root directory in the workspace. This is why we at first opened the directory. 
 
  - Specify all the names of the files to be added to the compilation as usual. Prepend them with the absolute path of ${workspaceFolder}.  
