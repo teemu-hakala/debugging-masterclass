@@ -71,7 +71,7 @@ I like to use ${workspaceFolder} variable which represents the root directory in
 
  - Click on create a `launch.json` file.
 
- - Select the first element of the list C++ (GDB/LLDB)  
+ - Select the first element of the list: C++ (GDB/LLDB)  
 
  - Select again the first element of the list: clang - Build and debug active file (compiler: /usr/bin/clang)  
 
@@ -91,19 +91,21 @@ preLaunchTask is the Label we chose in `tasks.json`.
 
  - Activate the .c source file.  
 
->Tip: Double click on a file (name or tab) to make it persist.  
+ > Tip: Double click on a file (name or tab) to make it persist.  
 
->Tip: The debugger has been coded to be strict about the type of the currently active file that has to be open once you begin debugging. For our use case .c extension works fine.  
+ > Tip: The debugger has been coded to be strict about the type of the currently active file that has to be open once you begin debugging. For our use case .c extension works fine.  
 
  - Set a breakpoint on the first effective line of your function. In our **ft_strcat** select line 17.  
 
  > Tip: Set the breakpoint by left clicking on the left hand-side of line numbers. A red circle should appear and stay.  
 
+ ![<Footage of setting a breakpoint>](https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/6de2dd58-39ae-44ca-b23a-47b1eb1c2f4f.gif?ClientID=vimeo-core-prod&Date=1640257363&Signature=3e14c41096786ee4250355b80a5c92d611902b1a)
+
  - Go to `Run and Debug` menu.  
 
  - Start the debugger from the green play button.  
  
- > Tip: You might want to drag the debug console next to the terminal pane to view them both at the same time.  
+ > Tip: You might want to drag the Debug Console next to the terminal pane to view them both at the same time.  
 
  > Tip: Once executing `Run and Debug`, even if Build finished with errors, the selected launch.json rule is ran. This creates oddities with the debugger interface given that a previous working version of the program exists.  
 
