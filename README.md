@@ -113,6 +113,8 @@ preLaunchTask is the Label we chose in `tasks.json`.
 
  Now your program should have been built successfully and the debugger should halt the program on the line **17** we specified.  
 
+ [**Video about debug procedure**](https://vimeo.com/659421992)
+
  Now a hovering bar of five buttons should appear.  
 
  > Tip: Drag the bar downwards from the left-hand side handle to prevent it from obstructing the view to the open tabs.  
@@ -185,7 +187,7 @@ preLaunchTask is the Label we chose in `tasks.json`.
 >
 >Tip: Even if the build fails, the debugger might appear to function, since it's been coded to assume the build is successful if there is a program with the correct name in the launch phase of the debugging.  
 > 
->Tip: When you need to give input from the stdin to the program you are debugging, use `externalConsole: true` to achieve this.  
+>Tip: When you need to give input from the stdin to the program you are debugging, use `"externalConsole": true` to achieve this.  
 >
 >Tip: Any file you wish to debug must be added as a source to the compilation phase. Use the wildcard *.c to select all .c files of a directory.  
 >
