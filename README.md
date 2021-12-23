@@ -11,7 +11,7 @@
 
 Let's go ahead and open from the application menu bar at the top `File->New Window (⇧⌘N)` to work with.  
 
- - Select the newly opened window and do `File->Open... (⌘O)` and navigate to the directory which holds the files you wish to debug. 
+ - Select the newly opened window and do `File->Open... (⌘O)` and navigate to the directory which holds the files you wish to debug.  
  >Tip: Use ⌘↑ to navigate to the parent directory. 
 
  - In  the Explorer view project directory should appear as the root of the Workspace. This is crucial so that later in the .json files we can call this as ${workspaceFolder}.  
@@ -34,6 +34,9 @@ From the file we can notice the `label` for the task; `command` to run, which is
 - Inside the arguments list we specify our compilation flags and arguments, each divided into a different pair of double quotes whenever our original command would require a whitespace. Observe from the code below.  
 
 > Tip: Use Control+Spacebar for IntelliSense to see all contextually proper variable names. Navigate your cursor with arrow keys to change context and select an item from the list.  
+>
+> ![<Image of IntelliSense contextual menu>](https://i.imgur.com/nnkQwXo.png)
+
 
 	"args": [
 		"-g",
@@ -100,8 +103,8 @@ preLaunchTask is the Label we chose in `tasks.json`.
  - Set a breakpoint on the first effective line of your function. In our **ft_strcat** select line **17**.  
 
  > Tip: Set the breakpoint by left clicking on the left hand-side of line numbers. A red circle should appear and stay.  
-
- ![<Footage of setting a breakpoint>](https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/6de2dd58-39ae-44ca-b23a-47b1eb1c2f4f.gif?ClientID=vimeo-core-prod&Date=1640257363&Signature=3e14c41096786ee4250355b80a5c92d611902b1a)
+ >
+ >![<Footage of setting a breakpoint>](https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/6de2dd58-39ae-44ca-b23a-47b1eb1c2f4f.gif?ClientID=vimeo-core-prod&Date=1640257363&Signature=3e14c41096786ee4250355b80a5c92d611902b1a)
 
  - Go to `Run and Debug` menu.  
 
