@@ -14,22 +14,22 @@ Let's go ahead and open from the application menu bar at the top `File->New Wind
  - Select the newly opened window and do `File->Open... (⌘O)` and navigate to the directory which holds the files you wish to debug. 
  >Tip: Use ⌘↑ to navigate to the parent directory. 
 
- - In  the Explorer view project directory should appear as the root of the Workspace. This is crucial so that later in the .json files we can call this as \${workspaceFolder}.  
+ - In  the Explorer view project directory should appear as the root of the Workspace. This is important so that later in the .json files we can call this as \${workspaceFolder}.  
  
- - Open the .c file you wish to debug.  
+ - Open the .c file you wish to debug. `main.c` in case of this repo.  
 
  - Choose from the top-bar application menu `Terminal -> Run Build Task (⇧⌘B)`.
 
- - From the list of detected tasks select the cogwheel from the right hand side of the first task `(C/C++: clang build active file, compiler: /usr/bin/clang)`.  
+ - From the popped up list of detected tasks select the cogwheel from the right hand side of the task named`(C/C++: clang build active file, compiler: /usr/bin/clang)`.  
 
- - Inside .vscode directory `tasks.json` file should appear with a preconfigured setup.
+ - Inside .vscode directory (should be inside root of our repo)`tasks.json` file should appear with a preconfigured setup.
  **This is one of the two crucial files in debugging with Visual Studio Code. Another one being launch.json**  
 
 	> Tip: Hover your mouse over the variables for clarifying mouseover texts. 
  
-From the file we can notice the `label` for the task; `command` to run, which is our compiler: clang; and the `arguments` to our command.  
+From the file we can notice the `label` for the task; `command` to run, specifying our compiler: clang; and the `args` list.  
 
-- Inside the arguments list we specify our compilation flags and arguments, each divided into a different pair of double quotes whenever our original command would require a whitespace. Observe from the code below.  
+- Inside the arguments list we specify compilation flags and arguments, enclosed in double quotes and separated by commas and, for the sake of readibility, newlines.  
 
 > Tip: Use Control+Spacebar for IntelliSense to see all contextually proper variable names. Navigate your cursor with arrow keys to change context and select an item from the list.  
 
